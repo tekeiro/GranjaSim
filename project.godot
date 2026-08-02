@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameState="*uid://5vjtv2l11y7o"
+Farm="*uid://5vjtv2l11y7o"
 
 [rendering]
 

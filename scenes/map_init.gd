@@ -8,7 +8,7 @@ func _ready() -> void:
 	
 	var map_generator = MapGenerator.new()
 	var map = map_generator.generate_map(options)
-	GameState.map = map
+	Farm.map = map
 	pass # Replace with function body.
 
 
