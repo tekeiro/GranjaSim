@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cjlice1owro7f"]
+
+[ext_resource type="Script" uid="uid://kkniyl2hlvqa" path="res://scenes/map_init.gd" id="1_gldc4"]
+[ext_resource type="TileSet" uid="uid://sk5n8niqw4cw" path="res://tilesets/ground.tres" id="1_paxxb"]
+[ext_resource type="Script" uid="uid://bjmixpfge7jc4" path="res://scenes/camera_control.gd" id="2_0cso3"]
+[ext_resource type="Script" uid="uid://8trcbc32ov3n" path="res://renderer/terrain_renderer.gd" id="2_gldc4"]
+[ext_resource type="Script" uid="uid://bmyt7n6yaoxyx" path="res://renderer/terrain_renderer_debug.gd" id="5_2klcf"]
+
+[node name="Map" type="Node2D" unique_id=1907166271]
+script = ExtResource("1_gldc4")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1227192952]
+position = Vector2(193, 107)
+zoom = Vector2(3, 3)
+script = ExtResource("2_0cso3")
+
+[node name="Terrain" type="TileMapLayer" parent="." unique_id=1769452496]
+tile_set = ExtResource("1_paxxb")
+script = ExtResource("2_gldc4")
+
+[node name="Terrain_Debug" type="TileMapLayer" parent="." unique_id=1699548122]
+visible = false
+tile_set = ExtResource("1_paxxb")
+script = ExtResource("5_2klcf")
