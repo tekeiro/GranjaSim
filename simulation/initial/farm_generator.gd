@@ -9,8 +9,8 @@ func generate_farm(options: MapGenerator.MapGeneratorOptions, seed: int = 0):
 	
 	## Map generation
 	var map_generator = MapGenerator.new()
-	map_generator.generate_map(options, seed)
-	var map = Farm.map
+	var map = map_generator.generate_map(options, seed)
+	Farm.map = map
 	
 	## Initialize land tiles
 	Farm.land_tiles.initialize()

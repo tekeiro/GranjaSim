@@ -1,6 +1,7 @@
 extends RefCounted
 class_name Tiles
 
+# TERRAIN
 const TERRAIN_CENTER = Vector2i(16, 26)
 const TERRAIN_LEFT = Vector2i(15, 26)
 const TERRAIN_RIGHT = Vector2i(17, 26)
@@ -11,6 +12,7 @@ const TERRAIN_UP_RIGHT = Vector2i(17, 25)
 const TERRAIN_DOWN_LEFT = Vector2i(15, 27)
 const TERRAIN_DOWN_RIGHT = Vector2i(17, 27)
 
+# WATER
 const WATER = Vector2i(6, 14)
 const WATER_LEFT = Vector2i(14, 26)
 const WATER_UP_LEFT = Vector2i(14, 25)
@@ -37,3 +39,17 @@ static var _water_terrain := CoastAutoTile.new(Enums.TileEnum.TERRAIN, Enums.Til
 	WATER_UP_LL, WATER_UP_RR])
 static func water_terrain_autotile() -> CoastAutoTile:
 	return _water_terrain
+	
+	
+# FENCE
+const FENCE_UL = Vector2i(21, 20)
+const FENCE_UR = Vector2i(22, 20)
+const FENCE_DL = Vector2i(21, 21)
+const FENCE_DR = Vector2i(22, 21)
+const FENCE_D = Vector2i(20, 19)
+const FENCE_UD = Vector2i(20, 20)
+const FENCE_U = Vector2i(20, 21)
+const FENCE_R = Vector2i(21, 19)
+const FENCE_LR = Vector2i(22, 19)
+const FENCE_L = Vector2i(23, 19)
+const FENCE_4 = Vector2i(23, 20)

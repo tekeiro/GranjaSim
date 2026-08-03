@@ -18,6 +18,10 @@ func get_land(row: int, col: int) -> LandTile:
 ## Replace a land tile with the given tile that its in (row, col) coordinate
 func set_land(row: int, col: int, land_tile: LandTile):
 	_land[row * Constants.LAND_TILE_W + col] = land_tile
+	
+func land_tile_to_map(row: int, col: int) -> Vector2i:
+	return Vector2i(row * Constants.LAND_TILE_H, col * Constants.LAND_TILE_W)
+	
 
 func initialize(): 
 	var map = Farm.map
