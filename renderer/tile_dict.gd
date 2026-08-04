@@ -37,15 +37,13 @@ static var _water_terrain := CoastAutoTile.new(Enums.TileEnum.TERRAIN, Enums.Til
 	[WATER, WATER_UP_LEFT, WATER_LEFT, WATER_DOWN_LL, WATER_DOWN_LEFT,
 	WATER_DOWN, WATER_DOWN_RIGHT, WATER_DOWN_RR, WATER_RIGHT, WATER_UP_RIGHT,
 	WATER_UP_LL, WATER_UP_RR])
-static func water_terrain_autotile() -> CoastAutoTile:
-	return _water_terrain
 	
 	
 # FENCE
-const FENCE_UL = Vector2i(21, 20)
-const FENCE_UR = Vector2i(22, 20)
-const FENCE_DL = Vector2i(21, 21)
-const FENCE_DR = Vector2i(22, 21)
+const FENCE_UL = Vector2i(22, 21)
+const FENCE_UR = Vector2i(21, 21)
+const FENCE_DL = Vector2i(22, 20)
+const FENCE_DR = Vector2i(21, 20)
 const FENCE_D = Vector2i(20, 19)
 const FENCE_UD = Vector2i(20, 20)
 const FENCE_U = Vector2i(20, 21)
@@ -57,4 +55,20 @@ const FENCE_LRD = Vector2i(23, 21)
 const FENCE_LRU = Vector2i(24, 21)
 const FENCE_URD = Vector2i(26, 21)
 const FENCE_ULD = Vector2i(27, 21)
-const FENCE_SINGLE = Vector2i(26, 19)
+const FENCE_SINGLE = Vector2i(25, 21)
+
+## All tiles mapping
+## [S, U, L, R, D, UL, UR, DL, DR, UD, LR, LRU, LRD, ULD, URD, 4D]
+##  0  1  2  3  4  5   6   7   8   9   10  11   12   13   14   15
+static var _fence_autotile = AutoTile8D.new(Enums.TileEnum.FENCE, [
+	FENCE_SINGLE, FENCE_U, FENCE_L, FENCE_R, FENCE_D,
+	FENCE_UL, FENCE_UR, FENCE_DL, FENCE_DR, FENCE_UD, FENCE_LR,
+	FENCE_LRU, FENCE_LRD, FENCE_ULD, FENCE_URD, FENCE_4
+])
+
+static func render_tile(tile: Enums.TileEnum) -> TileRenderer:
+	return {
+		Enums.TileEnum.TERRAIN: _water_terrain,
+		Enums.TileEnum.WATER: _water_terrain,
+		Enums.TileEnum.FENCE: _fence_autotile
+	}[tile]

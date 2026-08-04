@@ -1,4 +1,4 @@
-extends RefCounted
+extends TileRenderer
 class_name AutoTile8D
 
 ## What its the tile type
@@ -18,16 +18,15 @@ func tile() -> Enums.TileEnum:
 	return self._tile_type
 	
 	
-func get_sprite(map: Map, row: int, col: int) -> Vector2i:
-	var tile_type = map.get_ground_tile(row, col)
-	if tile_type != self._tile_type:
+func get_sprite(map: Map, row: int, col: int, map_tile: Enums.TileEnum) -> Vector2i:
+	if map_tile != self._tile_type:
+		print_debug("No tile type matched")
 		return Vector2i(0, 0)
 	
 	for rule in RULES.keys():
-			if _check_rule(map, row, col, _tile_type, rule):
-				return _tiles[RULES[rule]]
-			else:
-				return _tiles[0]
+		if _check_rule(map, row, col, _tile_type, rule):
+			return _tiles[RULES[rule]]
+	print_debug("otherwise return")
 	return _tiles[0]
 
 
@@ -48,8 +47,9 @@ const RULES = {
 	"-X-V-V-V-": 12, # LRD
 	"-V-V-X-V-": 13, # ULD
 	"-V-X-V-V-": 14, # URD
-	"-V-V-V-V-": 15 # 4D
+	"-V-V-V-V-": 15, # 4D
 }
+
 
 func _check_rule(map: Map, r: int, c: int, terrain: Enums.TileEnum, mask: String) -> bool:
 	return _check_mask_pos(map, r-1, c-1, terrain, _mask(mask, 0)) and \
@@ -63,12 +63,14 @@ func _check_rule(map: Map, r: int, c: int, terrain: Enums.TileEnum, mask: String
 	
 func _mask(mask: String, idx: int) -> int:
 	var letter = mask[idx]
-	if letter   == "V": return 0
-	elif letter == "X": return 1
-	elif letter == "-": return -1
-	else: return -2
+	# print_debug("letter: ", letter)
+	if letter   == "X": return 0
+	elif letter == "V": return 1
+	else: return -1
 
 func _check_mask_pos(map: Map, r: int, c: int, terrain: Enums.TileEnum, mask_pos: int) -> bool:
-	if mask_pos == 0: return map.get_ground_tile(r, c) != terrain
-	elif mask_pos > 0: return map.get_ground_tile(r, c) == terrain
-	else: return true
+	var curr_tile = map.get_surface_tile(r, c)
+	var result = true
+	if mask_pos == 0: result =  curr_tile != terrain
+	elif mask_pos > 0: result = curr_tile == terrain
+	return result

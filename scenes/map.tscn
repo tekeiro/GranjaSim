@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://8trcbc32ov3n" path="res://renderer/terrain_renderer.gd" id="2_gldc4"]
 [ext_resource type="Script" uid="uid://bmyt7n6yaoxyx" path="res://renderer/terrain_renderer_debug.gd" id="5_2klcf"]
 [ext_resource type="TileSet" uid="uid://bgh721k2mwkes" path="res://tilesets/other_objects.tres" id="6_2lpho"]
+[ext_resource type="Script" uid="uid://crv1ymhiuw7o7" path="res://renderer/surface_renderer.gd" id="7_nakos"]
 
 [node name="Map" type="Node2D" unique_id=1907166271]
 script = ExtResource("1_gldc4")
@@ -26,3 +27,4 @@ script = ExtResource("5_2klcf")
 
 [node name="Surface" type="TileMapLayer" parent="." unique_id=269598556]
 tile_set = ExtResource("6_2lpho")
+script = ExtResource("7_nakos")

@@ -1,4 +1,4 @@
-extends RefCounted
+extends TileRenderer
 class_name CoastAutoTile
 
 ##
@@ -57,12 +57,11 @@ func _init(the_inner_terrain: Enums.TileEnum, the_outer_terrain: Enums.TileEnum,
 	self.outer_tiles = the_outer_tiles
 
 
-func get_sprite(map: Map, r: int, c: int) -> Vector2i:
-	var terrain = map.get_ground_tile(r, c)
-	if terrain != inner_terrain and terrain != outer_terrain:
+func get_sprite(map: Map, r: int, c: int, map_tile: Enums.TileEnum) -> Vector2i:
+	if map_tile != inner_terrain and map_tile != outer_terrain:
 		return Vector2i.ZERO
 	
-	if terrain == inner_terrain:
+	if map_tile == inner_terrain:
 		if _check_mask_nb(map, r, c, inner_terrain, CT): return inner_tiles[4]
 		elif _check_mask_nb(map, r, c, inner_terrain, UPPER): return inner_tiles[1]
 		elif _check_mask_nb(map, r, c, inner_terrain, LF): return inner_tiles[3]
@@ -73,7 +72,7 @@ func get_sprite(map: Map, r: int, c: int) -> Vector2i:
 		elif _check_mask_nb(map, r, c, inner_terrain, DL): return inner_tiles[6]
 		elif _check_mask_nb(map, r, c, inner_terrain, DR): return inner_tiles[8]
 		else: return inner_tiles[4]
-	elif terrain == outer_terrain:
+	elif map_tile == outer_terrain:
 		for rule in WATER_RULES.keys():
 			if _check_water_rule(map, r, c, outer_terrain, rule):
 				return outer_tiles[WATER_RULES[rule]]

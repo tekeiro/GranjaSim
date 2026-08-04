@@ -41,3 +41,23 @@ func get_ground_tile(r: int, c: int) -> Enums.TileEnum:
 func set_ground_tile(r: int, c: int, type: Enums.TileEnum):
 	if type != Enums.TileEnum.NONE && Enums.is_terrain(type):
 		tiles[r][c] = MapTile.new_terrain(type)
+		
+func get_tile(r: int, c: int) -> Enums.TileEnum:
+	if r < 0 or r >= self._height:
+		return Enums.TileEnum.NONE
+	if c < 0 or c >= self._width:
+		return Enums.TileEnum.NONE
+	return tiles[r][c].get_tile_type()
+	
+func get_surface_tile(r: int, c: int) -> Enums.TileEnum:
+	if r < 0 or r >= self._height:
+		return Enums.TileEnum.NONE
+	if c < 0 or c >= self._width:
+		return Enums.TileEnum.NONE
+	return tiles[r][c].get_surface_tile()
+	
+func set_surface_tile(r: int, c:int, tile: Enums.TileEnum):
+	if tile != Enums.TileEnum.NONE and not Enums.is_terrain(tile):
+		var prev_tile = tiles[r][c]
+		prev_tile.surface = tile
+		prev_tile.group = Enums.TILE_GROUPS[tile]

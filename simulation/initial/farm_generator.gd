@@ -15,3 +15,7 @@ func generate_farm(options: MapGenerator.MapGeneratorOptions, seed: int = 0):
 	## Initialize land tiles
 	Farm.land_tiles.initialize()
 	
+	# Calculate Start farm position
+	var start_farm_positioner = StartFarmPositioner.new()
+	start_farm_positioner.generate_start_farm_position(seed)
+	

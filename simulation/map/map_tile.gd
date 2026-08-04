@@ -10,11 +10,15 @@ func get_tile_type() -> Enums.TileEnum:
 	
 func get_ground_tile() -> Enums.TileEnum:
 	return ground
+	
+func get_surface_tile() -> Enums.TileEnum:
+	return surface
 
 ### --------------- Generators ---------------------
 static func new_terrain(type: Enums.TileEnum) -> MapTile:
 	var tile = MapTile.new()
 	tile.ground = type
 	tile.group = Enums.TileGroup.TERRAIN
+	tile.surface = Enums.TileEnum.NONE
 	return tile
 ### --------------- Generators ---------------------

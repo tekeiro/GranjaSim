@@ -505,6 +505,7 @@ texture = ExtResource("1_euatn")
 27:21/0 = 0
 23:21/0 = 0
 24:21/0 = 0
+25:21/0 = 0
 
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_nakos")

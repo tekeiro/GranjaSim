@@ -39,8 +39,7 @@ func _process(delta: float) -> void:
 	for row in range(min_y, max_y):
 		for col in range(min_x, max_x):
 			var terrain = Farm.map.get_ground_tile(row, col)
-			var tile = Tiles.WATER if terrain == Enums.TileEnum.WATER else Tiles.TERRAIN_CENTER 
-			var sprite = Tiles.water_terrain_autotile().get_sprite(Farm.map, row, col)
+			var tile = Tiles.WATER if terrain == Enums.TileEnum.WATER else Tiles.TERRAIN_CENTER
 			set_cell(Vector2i(col, row), 0, tile)
 
 	pass

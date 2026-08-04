@@ -1,12 +1,13 @@
 extends TileMapLayer
-class_name TerrainRenderer
+class_name SurfaceRenderer
 
 var camera : Camera2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	camera = get_node("../Camera")
-	pass
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -38,9 +39,12 @@ func _process(delta: float) -> void:
 	# 5. Iterar solo sobre la porción visible de la matriz
 	for row in range(min_y, max_y):
 		for col in range(min_x, max_x):
-			var terrain = Farm.map.get_ground_tile(row, col)
-			var tile_renderer = Tiles.render_tile(terrain)
-			var sprite = tile_renderer.get_sprite(Farm.map, row, col, terrain) 
-			set_cell(Vector2i(col, row), 0, sprite)
+			var surface_tile = Farm.map.get_surface_tile(row, col)
+			if surface_tile != Enums.TileEnum.NONE:
+				var tile_renderer = Tiles.render_tile(surface_tile)
+				var sprite = tile_renderer.get_sprite(Farm.map, row, col, surface_tile)
+				set_cell(Vector2i(col, row), 0, sprite)
+			else:
+				set_cell(Vector2i(col, row), -1)
 
 	pass
