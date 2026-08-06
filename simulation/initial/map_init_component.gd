@@ -10,6 +10,8 @@ func _ready() -> void:
 	
 	var farm_generator = FarmGenerator.new()
 	farm_generator.generate_farm(options, seed)
+	
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
 
