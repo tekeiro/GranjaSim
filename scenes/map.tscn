@@ -10,19 +10,19 @@
 [ext_resource type="Texture2D" uid="uid://esjk07kiv8ss" path="res://ui/textures/buttons/pause.tres" id="8_gw3fx"]
 [ext_resource type="Texture2D" uid="uid://1sjalya4woin" path="res://ui/textures/buttons/pause_pressed.tres" id="9_n1psn"]
 [ext_resource type="Texture2D" uid="uid://eu2yv5ei4dlr" path="res://ui/textures/buttons/speed1.tres" id="10_c00ee"]
+[ext_resource type="Script" uid="uid://cd8d17p4m1nwh" path="res://ui/views/main_map/btn_time_speed.gd" id="10_c70he"]
 [ext_resource type="Texture2D" uid="uid://dfjl0v3cwltl3" path="res://ui/textures/buttons/speed1_pressed.tres" id="11_p7tei"]
 [ext_resource type="Texture2D" uid="uid://d4h2dcttbmrh" path="res://ui/textures/buttons/speed2.tres" id="12_c70he"]
 [ext_resource type="Texture2D" uid="uid://bnp0qu80ju5h" path="res://ui/textures/buttons/speed2_pressed.tres" id="13_mo32q"]
+[ext_resource type="Script" uid="uid://cw6ennlqmf2q8" path="res://ui/views/main_map/lb_date.gd" id="14_n1psn"]
+[ext_resource type="Texture2D" uid="uid://b0n5cjflw40yx" path="res://ui/textures/buttons/speed3.tres" id="14_p7tei"]
+[ext_resource type="Texture2D" uid="uid://cvkxymx7l1o33" path="res://ui/textures/buttons/speed3_pressed.tres" id="15_c70he"]
+[ext_resource type="Script" uid="uid://buqry3y5pmcle" path="res://ui/views/main_map/lb_money.gd" id="18_mo32q"]
 
 [node name="Map" type="Node2D" unique_id=1907166271]
 script = ExtResource("1_gldc4")
 
 [node name="GameZone" type="Node2D" parent="." unique_id=1773503475]
-
-[node name="Camera" type="Camera2D" parent="GameZone" unique_id=1227192952]
-position = Vector2(288, 163)
-zoom = Vector2(2, 2)
-script = ExtResource("2_0cso3")
 
 [node name="Terrain" type="TileMapLayer" parent="GameZone" unique_id=1769452496]
 tile_set = ExtResource("1_paxxb")
@@ -37,38 +37,97 @@ script = ExtResource("5_2klcf")
 tile_set = ExtResource("6_2lpho")
 script = ExtResource("7_nakos")
 
-[node name="UI" type="Control" parent="." unique_id=1265296917]
+[node name="Camera" type="Camera2D" parent="GameZone" unique_id=1227192952]
+position = Vector2(230, 130)
+zoom = Vector2(2.5, 2.5)
+script = ExtResource("2_0cso3")
+
+[node name="UI" type="Control" parent="GameZone/Camera" unique_id=1265296917]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 511.0
-offset_bottom = 308.0
+offset_left = -232.0
+offset_top = -128.0
+offset_right = 231.0
+offset_bottom = 129.0
 
-[node name="TimeControls" type="VBoxContainer" parent="UI" unique_id=1246367496]
+[node name="time_controls" type="VBoxContainer" parent="GameZone/Camera/UI" unique_id=1246367496]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.77922076
-anchor_right = 0.16046967
-anchor_bottom = 1.0000001
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -43.0
+offset_right = 56.0
 grow_vertical = 0
-metadata/_edit_use_anchors_ = true
 
-[node name="TimeSpeedControls" type="HBoxContainer" parent="UI/TimeControls" unique_id=1306369043]
+[node name="speed_controls" type="HBoxContainer" parent="GameZone/Camera/UI/time_controls" unique_id=1306369043]
 layout_mode = 2
 
-[node name="btnPause" type="TextureButton" parent="UI/TimeControls/TimeSpeedControls" unique_id=132877238]
+[node name="btnPause" type="TextureButton" parent="GameZone/Camera/UI/time_controls/speed_controls" unique_id=132877238]
 layout_mode = 2
+toggle_mode = true
 texture_normal = ExtResource("8_gw3fx")
 texture_pressed = ExtResource("9_n1psn")
+script = ExtResource("10_c70he")
 
-[node name="btnPlay" type="TextureButton" parent="UI/TimeControls/TimeSpeedControls" unique_id=721111366]
+[node name="btnPlay" type="TextureButton" parent="GameZone/Camera/UI/time_controls/speed_controls" unique_id=721111366]
 layout_mode = 2
+toggle_mode = true
 texture_normal = ExtResource("10_c00ee")
 texture_pressed = ExtResource("11_p7tei")
+script = ExtResource("10_c70he")
+time_speed = 1
 
-[node name="btnFwd2" type="TextureButton" parent="UI/TimeControls/TimeSpeedControls" unique_id=563748991]
+[node name="btnFwd2" type="TextureButton" parent="GameZone/Camera/UI/time_controls/speed_controls" unique_id=563748991]
 layout_mode = 2
+toggle_mode = true
 texture_normal = ExtResource("12_c70he")
 texture_pressed = ExtResource("13_mo32q")
+script = ExtResource("10_c70he")
+time_speed = 2
 
-[node name="lbDate" type="Label" parent="UI/TimeControls" unique_id=523289021]
+[node name="btnFwd3" type="TextureButton" parent="GameZone/Camera/UI/time_controls/speed_controls" unique_id=886701993]
 layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("14_p7tei")
+texture_pressed = ExtResource("15_c70he")
+script = ExtResource("10_c70he")
+time_speed = 3
+
+[node name="lbDate" type="Label" parent="GameZone/Camera/UI/time_controls" unique_id=523289021]
+layout_mode = 2
+script = ExtResource("14_n1psn")
+
+[node name="actions" type="HBoxContainer" parent="GameZone/Camera/UI" unique_id=1227262213]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="right_bottom_corner" type="HBoxContainer" parent="GameZone/Camera/UI" unique_id=1502298537]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="map_buttons" type="VBoxContainer" parent="GameZone/Camera/UI/right_bottom_corner" unique_id=1441068991]
+layout_mode = 2
+
+[node name="map_and_money" type="VBoxContainer" parent="GameZone/Camera/UI/right_bottom_corner" unique_id=1554335731]
+layout_mode = 2
+
+[node name="lbMoney" type="Label" parent="GameZone/Camera/UI/right_bottom_corner/map_and_money" unique_id=1337435327]
+layout_mode = 2
+script = ExtResource("18_mo32q")
