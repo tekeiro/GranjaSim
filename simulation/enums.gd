@@ -2,11 +2,15 @@ extends RefCounted
 class_name Enums
 
 enum TileEnum {
-	NONE,
+	NONE, 
+	HAND, LENS, BULLDOZER,
 	
 	TERRAIN, WATER,
 	
-	FENCE, ROAD, DITCH
+	FENCE, PATH, ROAD, GATE_FENCE,
+	PLANT,
+	FEEDER, DRINKING,
+	DITCH
 }
 
 static func is_terrain(type: TileEnum) -> bool:

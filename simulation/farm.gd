@@ -1,6 +1,6 @@
 extends Node
 
-## TODO TIEMPO
+
 ## Money
 var money := 0.0
 ## Map
@@ -9,3 +9,7 @@ var map := Map.new()
 var start_pos := Vector2i(0, 0)
 ## Land tiles
 var land_tiles: LandTiles = LandTiles.new()
+
+
+# Current tool selected
+var tool_selected: Enums.TileEnum = Enums.TileEnum.NONE

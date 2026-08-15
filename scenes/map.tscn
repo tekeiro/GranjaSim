@@ -7,11 +7,22 @@
 [ext_resource type="Script" uid="uid://bmyt7n6yaoxyx" path="res://renderer/terrain_renderer_debug.gd" id="5_2klcf"]
 [ext_resource type="TileSet" uid="uid://bgh721k2mwkes" path="res://tilesets/other_objects.tres" id="6_2lpho"]
 [ext_resource type="Script" uid="uid://crv1ymhiuw7o7" path="res://renderer/surface_renderer.gd" id="7_nakos"]
+[ext_resource type="Script" uid="uid://cidtqedo1oq1e" path="res://ui/controls/btn_sel_tool.gd" id="9_5u2yt"]
+[ext_resource type="Texture2D" uid="uid://vfewsmuyu5ba" path="res://ui/textures/buttons_v2/btn_hand.tres" id="9_mo32q"]
+[ext_resource type="Texture2D" uid="uid://cil1sf307d18n" path="res://ui/textures/buttons_v2/btn_lupa.tres" id="10_6k6j1"]
+[ext_resource type="Script" uid="uid://ddfyvc1g4v036" path="res://ui/controls/btn_accordion_toolbar.gd" id="11_6k6j1"]
+[ext_resource type="Texture2D" uid="uid://c1miyiivhwbke" path="res://ui/textures/buttons_v2/btn_road.tres" id="12_m335s"]
+[ext_resource type="Texture2D" uid="uid://syyvp000e8ca" path="res://ui/textures/buttons_v2/btn_path.tres" id="13_2cfcp"]
 [ext_resource type="PackedScene" uid="uid://df7jwpim4guxo" path="res://ui/controls/ctr_date.tscn" id="14_p7tei"]
+[ext_resource type="Texture2D" uid="uid://bhif63q5q3sjk" path="res://ui/textures/buttons_v2/btn_fence.tres" id="14_y2ir2"]
+[ext_resource type="Texture2D" uid="uid://cklu11j4lu1sv" path="res://ui/textures/buttons_v2/btn_fence_gate.tres" id="15_5u2yt"]
 [ext_resource type="PackedScene" uid="uid://d26nwd0lt2p5e" path="res://ui/controls/ctr_money.tscn" id="15_c00ee"]
+[ext_resource type="Texture2D" uid="uid://qifcl2gt4a3p" path="res://ui/textures/buttons_v2/btn_plant.tres" id="16_y2ir2"]
 [ext_resource type="PackedScene" uid="uid://la6aq1hyyk8j" path="res://ui/controls/btn.tscn" id="17_m335s"]
 [ext_resource type="Script" uid="uid://p14y4xjvi3dx" path="res://ui/views/main_map/btn_small_time_speed.gd" id="18_m335s"]
+[ext_resource type="Texture2D" uid="uid://c3cnul0nxb5og" path="res://ui/textures/buttons_v2/btn_feeder.tres" id="18_mkblt"]
 [ext_resource type="Texture2D" uid="uid://20qmkpmjkavy" path="res://ui/textures/buttons_v2/btn_pause.tres" id="18_sq6bu"]
+[ext_resource type="Texture2D" uid="uid://ddqncl1ky6vsj" path="res://ui/textures/buttons_v2/btn_drinking.tres" id="19_4o3w1"]
 [ext_resource type="PackedScene" uid="uid://cwslsaqmggosy" path="res://ui/controls/btn_small.tscn" id="19_sq6bu"]
 [ext_resource type="Texture2D" uid="uid://dm3xxicwloltj" path="res://ui/textures/buttons_v2/btn_speed_1.tres" id="20_2cfcp"]
 [ext_resource type="Texture2D" uid="uid://cyjwi4gpp1khj" path="res://ui/textures/buttons_v2/btn_speed_2.tres" id="21_y2ir2"]
@@ -62,9 +73,79 @@ grow_vertical = 2
 
 [node name="btnHand" parent="CanvasLayer/UI/build_buttons" unique_id=961189868 instance=ExtResource("17_m335s")]
 layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 1
+icon_texture = ExtResource("9_mo32q")
 
-[node name="btnHand2" parent="CanvasLayer/UI/build_buttons" unique_id=1181858362 instance=ExtResource("17_m335s")]
+[node name="btnLupa" parent="CanvasLayer/UI/build_buttons" unique_id=1181858362 instance=ExtResource("17_m335s")]
 layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 2
+icon_texture = ExtResource("10_6k6j1")
+
+[node name="accPaths" type="HBoxContainer" parent="CanvasLayer/UI/build_buttons" unique_id=34553288]
+layout_mode = 2
+
+[node name="grpPaths" parent="CanvasLayer/UI/build_buttons/accPaths" unique_id=1042739714 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("11_6k6j1")
+icon_texture = ExtResource("12_m335s")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/build_buttons/accPaths" unique_id=2016409678]
+layout_mode = 2
+
+[node name="btnPath" parent="CanvasLayer/UI/build_buttons/accPaths/HBoxContainer" unique_id=1058826062 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 7
+icon_texture = ExtResource("13_2cfcp")
+
+[node name="btnRoad" parent="CanvasLayer/UI/build_buttons/accPaths/HBoxContainer" unique_id=1192744282 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 8
+icon_texture = ExtResource("12_m335s")
+
+[node name="btnFence" parent="CanvasLayer/UI/build_buttons/accPaths/HBoxContainer" unique_id=267515133 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 6
+icon_texture = ExtResource("14_y2ir2")
+
+[node name="btnFenceGate" parent="CanvasLayer/UI/build_buttons/accPaths/HBoxContainer" unique_id=1776796338 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 9
+icon_texture = ExtResource("15_5u2yt")
+
+[node name="btnPlant" parent="CanvasLayer/UI/build_buttons" unique_id=1418923891 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 10
+icon_texture = ExtResource("16_y2ir2")
+
+[node name="accAnimals" type="HBoxContainer" parent="CanvasLayer/UI/build_buttons" unique_id=442379462]
+layout_mode = 2
+
+[node name="grpAnimals" parent="CanvasLayer/UI/build_buttons/accAnimals" unique_id=852849238 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("11_6k6j1")
+icon_texture = ExtResource("12_m335s")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/build_buttons/accAnimals" unique_id=781669861]
+layout_mode = 2
+
+[node name="btnFeeder" parent="CanvasLayer/UI/build_buttons/accAnimals/HBoxContainer" unique_id=202615173 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 7
+icon_texture = ExtResource("18_mkblt")
+
+[node name="btnDrinking" parent="CanvasLayer/UI/build_buttons/accAnimals/HBoxContainer" unique_id=101483302 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 8
+icon_texture = ExtResource("19_4o3w1")
 
 [node name="time_controls" type="VBoxContainer" parent="CanvasLayer/UI" unique_id=1246367496]
 layout_mode = 1

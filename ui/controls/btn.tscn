@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://gkgu5exybrrd" path="res://ui/controls/btn.gd" id="3_uemo7"]
 
 [node name="btn" type="TextureButton" unique_id=961189868]
+toggle_mode = true
 texture_normal = ExtResource("1_y518f")
 texture_pressed = ExtResource("2_uemo7")
 script = ExtResource("3_uemo7")
