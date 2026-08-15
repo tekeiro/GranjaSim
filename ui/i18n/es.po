@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-08-15 12:25+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-Basepath: .\n"
+
+#: simulation/time/time_calendar.gd:89
+msgid "time.months.jan"
+msgstr "Ene"
+
+#: simulation/time/time_calendar.gd:90
+msgid "time.months.feb"
+msgstr "Feb"
+
+#: simulation/time/time_calendar.gd:91
+msgid "time.months.mar"
+msgstr "Mar"
+
+#: simulation/time/time_calendar.gd:92
+msgid "time.months.apr"
+msgstr "Abr"
+
+#: simulation/time/time_calendar.gd:93
+msgid "time.months.may"
+msgstr "May"
+
+#: simulation/time/time_calendar.gd:94
+msgid "time.months.jun"
+msgstr "Jun"
+
+#: simulation/time/time_calendar.gd:95
+msgid "time.months.jul"
+msgstr "Jul"
+
+#: simulation/time/time_calendar.gd:96
+msgid "time.months.aug"
+msgstr "Aug"
+
+#: simulation/time/time_calendar.gd:97
+msgid "time.months.sep"
+msgstr "Sep"
+
+#: simulation/time/time_calendar.gd:98
+msgid "time.months.oct"
+msgstr "Oct"
+
+#: simulation/time/time_calendar.gd:99
+msgid "time.months.nov"
+msgstr "Nov"
+
+#: simulation/time/time_calendar.gd:100
+msgid "time.months.dec"
+msgstr "Dec"
+
+#: simulation/time/time_calendar.gd:106
+msgid "time.weeks"
+msgstr "Sem."
+
+msgid "GranjaSim"
+msgstr "GranjaSim"

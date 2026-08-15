@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://beincmahlodi4"]
+
+[sub_resource type="SystemFont" id="SystemFont_7ywrv"]
+font_names = PackedStringArray("Monospace")
+font_weight = 600
+
+[resource]
+font = SubResource("SystemFont_7ywrv")
+font_color = Color(0, 0, 0, 1)

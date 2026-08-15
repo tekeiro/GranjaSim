@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dfvayad6fpp8c"]
+
+[sub_resource type="SystemFont" id="SystemFont_xe8ji"]
+font_names = PackedStringArray("Monospace")
+font_weight = 450
+
+[resource]
+font = SubResource("SystemFont_xe8ji")
+font_size = 23
+font_color = Color(0.03137255, 0.45882353, 0.043137256, 1)

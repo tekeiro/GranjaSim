@@ -1,0 +1,68 @@
+# LANGUAGE translation for GranjaSim for the following files:
+# res://ui/views/main_map/lb_date.gd
+# res://simulation/time/time_calendar.gd
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GranjaSim\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: simulation/time/time_calendar.gd:89
+msgid "time.months.jan"
+msgstr ""
+
+#: simulation/time/time_calendar.gd:90
+msgid "time.months.feb"
+msgstr ""
+
+#: simulation/time/time_calendar.gd:91
+msgid "time.months.mar"
+msgstr ""
+
+#: simulation/time/time_calendar.gd:92
+msgid "time.months.apr"
+msgstr ""
+
+#: simulation/time/time_calendar.gd:93
+msgid "time.months.may"
+msgstr ""
+
+#: simulation/time/time_calendar.gd:94
+msgid "time.months.jun"
+msgstr ""
+
+#: simulation/time/time_calendar.gd:95
+msgid "time.months.jul"
+msgstr ""
+
+#: simulation/time/time_calendar.gd:96
+msgid "time.months.aug"
+msgstr ""
+
+#: simulation/time/time_calendar.gd:97
+msgid "time.months.sep"
+msgstr ""
+
+#: simulation/time/time_calendar.gd:98
+msgid "time.months.oct"
+msgstr ""
+
+#: simulation/time/time_calendar.gd:99
+msgid "time.months.nov"
+msgstr ""
+
+#: simulation/time/time_calendar.gd:100
+msgid "time.months.dec"
+msgstr ""
+
+#: simulation/time/time_calendar.gd:106
+msgid "time.weeks"
+msgstr ""
+
+msgid "GranjaSim"
+msgstr ""

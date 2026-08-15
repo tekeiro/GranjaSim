@@ -7,17 +7,15 @@
 [ext_resource type="Script" uid="uid://bmyt7n6yaoxyx" path="res://renderer/terrain_renderer_debug.gd" id="5_2klcf"]
 [ext_resource type="TileSet" uid="uid://bgh721k2mwkes" path="res://tilesets/other_objects.tres" id="6_2lpho"]
 [ext_resource type="Script" uid="uid://crv1ymhiuw7o7" path="res://renderer/surface_renderer.gd" id="7_nakos"]
-[ext_resource type="Texture2D" uid="uid://esjk07kiv8ss" path="res://ui/textures/buttons/pause.tres" id="8_gw3fx"]
-[ext_resource type="Texture2D" uid="uid://1sjalya4woin" path="res://ui/textures/buttons/pause_pressed.tres" id="9_n1psn"]
-[ext_resource type="Texture2D" uid="uid://eu2yv5ei4dlr" path="res://ui/textures/buttons/speed1.tres" id="10_c00ee"]
-[ext_resource type="Script" uid="uid://cd8d17p4m1nwh" path="res://ui/views/main_map/btn_time_speed.gd" id="10_c70he"]
-[ext_resource type="Texture2D" uid="uid://dfjl0v3cwltl3" path="res://ui/textures/buttons/speed1_pressed.tres" id="11_p7tei"]
-[ext_resource type="Texture2D" uid="uid://d4h2dcttbmrh" path="res://ui/textures/buttons/speed2.tres" id="12_c70he"]
-[ext_resource type="Texture2D" uid="uid://bnp0qu80ju5h" path="res://ui/textures/buttons/speed2_pressed.tres" id="13_mo32q"]
-[ext_resource type="Script" uid="uid://cw6ennlqmf2q8" path="res://ui/views/main_map/lb_date.gd" id="14_n1psn"]
-[ext_resource type="Texture2D" uid="uid://b0n5cjflw40yx" path="res://ui/textures/buttons/speed3.tres" id="14_p7tei"]
-[ext_resource type="Texture2D" uid="uid://cvkxymx7l1o33" path="res://ui/textures/buttons/speed3_pressed.tres" id="15_c70he"]
-[ext_resource type="Script" uid="uid://buqry3y5pmcle" path="res://ui/views/main_map/lb_money.gd" id="18_mo32q"]
+[ext_resource type="PackedScene" uid="uid://df7jwpim4guxo" path="res://ui/controls/ctr_date.tscn" id="14_p7tei"]
+[ext_resource type="PackedScene" uid="uid://d26nwd0lt2p5e" path="res://ui/controls/ctr_money.tscn" id="15_c00ee"]
+[ext_resource type="PackedScene" uid="uid://la6aq1hyyk8j" path="res://ui/controls/btn.tscn" id="17_m335s"]
+[ext_resource type="Script" uid="uid://p14y4xjvi3dx" path="res://ui/views/main_map/btn_small_time_speed.gd" id="18_m335s"]
+[ext_resource type="Texture2D" uid="uid://20qmkpmjkavy" path="res://ui/textures/buttons_v2/btn_pause.tres" id="18_sq6bu"]
+[ext_resource type="PackedScene" uid="uid://cwslsaqmggosy" path="res://ui/controls/btn_small.tscn" id="19_sq6bu"]
+[ext_resource type="Texture2D" uid="uid://dm3xxicwloltj" path="res://ui/textures/buttons_v2/btn_speed_1.tres" id="20_2cfcp"]
+[ext_resource type="Texture2D" uid="uid://cyjwi4gpp1khj" path="res://ui/textures/buttons_v2/btn_speed_2.tres" id="21_y2ir2"]
+[ext_resource type="Texture2D" uid="uid://bl5540cvb4qek" path="res://ui/textures/buttons_v2/btn_speed_3.tres" id="22_y2ir2"]
 
 [node name="Map" type="Node2D" unique_id=1907166271]
 script = ExtResource("1_gldc4")
@@ -52,6 +50,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="build_buttons" type="VBoxContainer" parent="CanvasLayer/UI" unique_id=2102929702]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="btnHand" parent="CanvasLayer/UI/build_buttons" unique_id=961189868 instance=ExtResource("17_m335s")]
+layout_mode = 2
+
+[node name="btnHand2" parent="CanvasLayer/UI/build_buttons" unique_id=1181858362 instance=ExtResource("17_m335s")]
+layout_mode = 2
+
 [node name="time_controls" type="VBoxContainer" parent="CanvasLayer/UI" unique_id=1246367496]
 layout_mode = 1
 anchors_preset = 2
@@ -64,40 +78,36 @@ grow_vertical = 0
 [node name="speed_controls" type="HBoxContainer" parent="CanvasLayer/UI/time_controls" unique_id=1306369043]
 layout_mode = 2
 
-[node name="btnPause" type="TextureButton" parent="CanvasLayer/UI/time_controls/speed_controls" unique_id=132877238]
+[node name="btn_pause" parent="CanvasLayer/UI/time_controls/speed_controls" unique_id=557040486 instance=ExtResource("19_sq6bu")]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("8_gw3fx")
-texture_pressed = ExtResource("9_n1psn")
-script = ExtResource("10_c70he")
+script = ExtResource("18_m335s")
+time_speed = 0
+icon_texture = ExtResource("18_sq6bu")
 
-[node name="btnPlay" type="TextureButton" parent="CanvasLayer/UI/time_controls/speed_controls" unique_id=721111366]
+[node name="btn_play" parent="CanvasLayer/UI/time_controls/speed_controls" unique_id=337553089 instance=ExtResource("19_sq6bu")]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("10_c00ee")
-texture_pressed = ExtResource("11_p7tei")
-script = ExtResource("10_c70he")
+script = ExtResource("18_m335s")
 time_speed = 1
+icon_texture = ExtResource("20_2cfcp")
 
-[node name="btnFwd2" type="TextureButton" parent="CanvasLayer/UI/time_controls/speed_controls" unique_id=563748991]
+[node name="btn_speed2" parent="CanvasLayer/UI/time_controls/speed_controls" unique_id=1878810137 instance=ExtResource("19_sq6bu")]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("12_c70he")
-texture_pressed = ExtResource("13_mo32q")
-script = ExtResource("10_c70he")
+script = ExtResource("18_m335s")
 time_speed = 2
+icon_texture = ExtResource("21_y2ir2")
 
-[node name="btnFwd3" type="TextureButton" parent="CanvasLayer/UI/time_controls/speed_controls" unique_id=886701993]
+[node name="btn_speed3" parent="CanvasLayer/UI/time_controls/speed_controls" unique_id=2017114246 instance=ExtResource("19_sq6bu")]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("14_p7tei")
-texture_pressed = ExtResource("15_c70he")
-script = ExtResource("10_c70he")
+script = ExtResource("18_m335s")
 time_speed = 3
+icon_texture = ExtResource("22_y2ir2")
 
-[node name="lbDate" type="Label" parent="CanvasLayer/UI/time_controls" unique_id=523289021]
+[node name="ctrDate" parent="CanvasLayer/UI/time_controls" unique_id=1703801321 instance=ExtResource("14_p7tei")]
 layout_mode = 2
-script = ExtResource("14_n1psn")
 
 [node name="actions" type="HBoxContainer" parent="CanvasLayer/UI" unique_id=1227262213]
 layout_mode = 1
@@ -130,6 +140,5 @@ layout_mode = 2
 [node name="map_and_money" type="VBoxContainer" parent="CanvasLayer/UI/right_bottom_corner" unique_id=1554335731]
 layout_mode = 2
 
-[node name="lbMoney" type="Label" parent="CanvasLayer/UI/right_bottom_corner/map_and_money" unique_id=1337435327]
+[node name="ctrMoney" parent="CanvasLayer/UI/right_bottom_corner/map_and_money" unique_id=162076382 instance=ExtResource("15_c00ee")]
 layout_mode = 2
-script = ExtResource("18_mo32q")

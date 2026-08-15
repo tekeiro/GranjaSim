@@ -20,6 +20,12 @@ config/icon="res://icon.svg"
 Farm="*uid://5vjtv2l11y7o"
 TimeCalendar="*uid://cxgapdio3dlhl"
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://ui/i18n/es.po")
+locale/translations_pot_files=PackedStringArray("res://ui/views/main_map/lb_date.gd", "res://simulation/time/time_calendar.gd")
+locale/locale_filter_mode=1
+
 [rendering]
 
 renderer/rendering_method="mobile"
