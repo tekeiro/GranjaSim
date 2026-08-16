@@ -21,12 +21,28 @@
 [ext_resource type="PackedScene" uid="uid://la6aq1hyyk8j" path="res://ui/controls/btn.tscn" id="17_m335s"]
 [ext_resource type="Script" uid="uid://p14y4xjvi3dx" path="res://ui/views/main_map/btn_small_time_speed.gd" id="18_m335s"]
 [ext_resource type="Texture2D" uid="uid://c3cnul0nxb5og" path="res://ui/textures/buttons_v2/btn_feeder.tres" id="18_mkblt"]
+[ext_resource type="Texture2D" uid="uid://cjdb8k8wnik80" path="res://ui/textures/buttons_v2/btn_barn_small.tres" id="18_mniao"]
 [ext_resource type="Texture2D" uid="uid://20qmkpmjkavy" path="res://ui/textures/buttons_v2/btn_pause.tres" id="18_sq6bu"]
 [ext_resource type="Texture2D" uid="uid://ddqncl1ky6vsj" path="res://ui/textures/buttons_v2/btn_drinking.tres" id="19_4o3w1"]
 [ext_resource type="PackedScene" uid="uid://cwslsaqmggosy" path="res://ui/controls/btn_small.tscn" id="19_sq6bu"]
 [ext_resource type="Texture2D" uid="uid://dm3xxicwloltj" path="res://ui/textures/buttons_v2/btn_speed_1.tres" id="20_2cfcp"]
+[ext_resource type="Texture2D" uid="uid://bte2365v05nth" path="res://ui/textures/buttons_v2/btn_silo_small.tres" id="20_4o3w1"]
+[ext_resource type="Texture2D" uid="uid://kq1x88tk8bp5" path="res://ui/textures/buttons_v2/btn_silo_big.tres" id="21_6ek7f"]
 [ext_resource type="Texture2D" uid="uid://cyjwi4gpp1khj" path="res://ui/textures/buttons_v2/btn_speed_2.tres" id="21_y2ir2"]
+[ext_resource type="Texture2D" uid="uid://3vbm2c0eiecq" path="res://ui/textures/buttons_v2/btn_shed_small.tres" id="22_fq663"]
 [ext_resource type="Texture2D" uid="uid://bl5540cvb4qek" path="res://ui/textures/buttons_v2/btn_speed_3.tres" id="22_y2ir2"]
+[ext_resource type="Texture2D" uid="uid://d28w7g80io2yw" path="res://ui/textures/buttons_v2/btn_shed_big.tres" id="23_mniao"]
+[ext_resource type="Texture2D" uid="uid://bu0415ilkcyi6" path="res://ui/textures/buttons_v2/btn_barn_big.tres" id="25_yfm5w"]
+[ext_resource type="Texture2D" uid="uid://dkk4fs5336hrk" path="res://ui/textures/buttons_v2/btn_water_ditch.tres" id="26_081xv"]
+[ext_resource type="Texture2D" uid="uid://cijg4801dxpp" path="res://ui/textures/buttons_v2/btn_water_tower.tres" id="27_lhdcv"]
+[ext_resource type="Texture2D" uid="uid://d0ek6dhb862uh" path="res://ui/textures/buttons_v2/btn_water_ditch_interruptor.tres" id="27_mwr4f"]
+[ext_resource type="Texture2D" uid="uid://dlsdwf4emkdcq" path="res://ui/textures/buttons_v2/btn_water_pump.tres" id="28_cgoaf"]
+[ext_resource type="Texture2D" uid="uid://4qfsllwtgibl" path="res://ui/textures/buttons_v2/btn_windmill.tres" id="29_cgoaf"]
+[ext_resource type="Texture2D" uid="uid://cjpwjyuh55w8d" path="res://ui/textures/buttons_v2/btn_spray_fert.tres" id="31_1qn5a"]
+[ext_resource type="Texture2D" uid="uid://ku18u1640lts" path="res://ui/textures/buttons_v2/btn_spray_pest.tres" id="32_litwm"]
+[ext_resource type="Texture2D" uid="uid://bn12itahq5i51" path="res://ui/textures/buttons_v2/btn_spray_herb.tres" id="33_g8nl4"]
+[ext_resource type="Texture2D" uid="uid://bj3jjdwda7i2g" path="res://ui/textures/buttons_v2/btn_spray_fungi.tres" id="34_vqsqp"]
+[ext_resource type="Texture2D" uid="uid://babaiogcoltak" path="res://ui/textures/buttons_v2/btn_bulldozer.tres" id="35_g8nl4"]
 
 [node name="Map" type="Node2D" unique_id=1907166271]
 script = ExtResource("1_gldc4")
@@ -130,7 +146,7 @@ layout_mode = 2
 [node name="grpAnimals" parent="CanvasLayer/UI/build_buttons/accAnimals" unique_id=852849238 instance=ExtResource("17_m335s")]
 layout_mode = 2
 script = ExtResource("11_6k6j1")
-icon_texture = ExtResource("12_m335s")
+icon_texture = ExtResource("18_mniao")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/build_buttons/accAnimals" unique_id=781669861]
 layout_mode = 2
@@ -138,14 +154,143 @@ layout_mode = 2
 [node name="btnFeeder" parent="CanvasLayer/UI/build_buttons/accAnimals/HBoxContainer" unique_id=202615173 instance=ExtResource("17_m335s")]
 layout_mode = 2
 script = ExtResource("9_5u2yt")
-tool = 7
+tool = 11
 icon_texture = ExtResource("18_mkblt")
 
 [node name="btnDrinking" parent="CanvasLayer/UI/build_buttons/accAnimals/HBoxContainer" unique_id=101483302 instance=ExtResource("17_m335s")]
 layout_mode = 2
 script = ExtResource("9_5u2yt")
-tool = 8
+tool = 12
 icon_texture = ExtResource("19_4o3w1")
+
+[node name="accStructures" type="HBoxContainer" parent="CanvasLayer/UI/build_buttons" unique_id=1031255268]
+layout_mode = 2
+
+[node name="grpStructures" parent="CanvasLayer/UI/build_buttons/accStructures" unique_id=40902649 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("11_6k6j1")
+icon_texture = ExtResource("22_fq663")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/build_buttons/accStructures" unique_id=1155123068]
+layout_mode = 2
+
+[node name="btnSiloSmall" parent="CanvasLayer/UI/build_buttons/accStructures/HBoxContainer" unique_id=1664940158 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 13
+icon_texture = ExtResource("20_4o3w1")
+
+[node name="btnSiloBig" parent="CanvasLayer/UI/build_buttons/accStructures/HBoxContainer" unique_id=1943273997 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 14
+icon_texture = ExtResource("21_6ek7f")
+
+[node name="btnShedSmall" parent="CanvasLayer/UI/build_buttons/accStructures/HBoxContainer" unique_id=1908974153 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 15
+icon_texture = ExtResource("22_fq663")
+
+[node name="btnShedBig" parent="CanvasLayer/UI/build_buttons/accStructures/HBoxContainer" unique_id=217158577 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 16
+icon_texture = ExtResource("23_mniao")
+
+[node name="btnBarnSmall" parent="CanvasLayer/UI/build_buttons/accStructures/HBoxContainer" unique_id=466459339 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 17
+icon_texture = ExtResource("18_mniao")
+
+[node name="btnBarnBig" parent="CanvasLayer/UI/build_buttons/accStructures/HBoxContainer" unique_id=1494986125 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 18
+icon_texture = ExtResource("25_yfm5w")
+
+[node name="accWater" type="HBoxContainer" parent="CanvasLayer/UI/build_buttons" unique_id=1893195323]
+layout_mode = 2
+
+[node name="grpWater" parent="CanvasLayer/UI/build_buttons/accWater" unique_id=1177017443 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("11_6k6j1")
+icon_texture = ExtResource("26_081xv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/build_buttons/accWater" unique_id=190897157]
+layout_mode = 2
+
+[node name="btnDitch" parent="CanvasLayer/UI/build_buttons/accWater/HBoxContainer" unique_id=70774072 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 22
+icon_texture = ExtResource("26_081xv")
+
+[node name="btnDitchInterruptor" parent="CanvasLayer/UI/build_buttons/accWater/HBoxContainer" unique_id=1042521019 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 23
+icon_texture = ExtResource("27_mwr4f")
+
+[node name="btnWaterTower" parent="CanvasLayer/UI/build_buttons/accWater/HBoxContainer" unique_id=744139024 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 19
+icon_texture = ExtResource("27_lhdcv")
+
+[node name="btnWaterPump" parent="CanvasLayer/UI/build_buttons/accWater/HBoxContainer" unique_id=1310597059 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 20
+icon_texture = ExtResource("28_cgoaf")
+
+[node name="btnWindmill" parent="CanvasLayer/UI/build_buttons/accWater/HBoxContainer" unique_id=348945270 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 21
+icon_texture = ExtResource("29_cgoaf")
+
+[node name="accSpray" type="HBoxContainer" parent="CanvasLayer/UI/build_buttons" unique_id=2014743044]
+layout_mode = 2
+
+[node name="grpSpray" parent="CanvasLayer/UI/build_buttons/accSpray" unique_id=538195035 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("11_6k6j1")
+icon_texture = ExtResource("31_1qn5a")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/build_buttons/accSpray" unique_id=1955704148]
+layout_mode = 2
+
+[node name="btnFert" parent="CanvasLayer/UI/build_buttons/accSpray/HBoxContainer" unique_id=1293595666 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 24
+icon_texture = ExtResource("31_1qn5a")
+
+[node name="btnPest" parent="CanvasLayer/UI/build_buttons/accSpray/HBoxContainer" unique_id=524976556 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 25
+icon_texture = ExtResource("32_litwm")
+
+[node name="btnHerb" parent="CanvasLayer/UI/build_buttons/accSpray/HBoxContainer" unique_id=679249256 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 27
+icon_texture = ExtResource("33_g8nl4")
+
+[node name="btnFungi" parent="CanvasLayer/UI/build_buttons/accSpray/HBoxContainer" unique_id=877292900 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 26
+icon_texture = ExtResource("34_vqsqp")
+
+[node name="btnBulldozer" parent="CanvasLayer/UI/build_buttons" unique_id=187362724 instance=ExtResource("17_m335s")]
+layout_mode = 2
+script = ExtResource("9_5u2yt")
+tool = 3
+icon_texture = ExtResource("35_g8nl4")
 
 [node name="time_controls" type="VBoxContainer" parent="CanvasLayer/UI" unique_id=1246367496]
 layout_mode = 1
